@@ -36,60 +36,87 @@ public class PieceMovement : MonoBehaviour
                 Gizmos.color = Color.white;
                 Handles.color = Color.blue;
                 Handles.DrawWireDisc(transform.position, new Vector3(1, 1, 1), 1f);
-                Handles.Label(transform.position * .7f, "Pawn");
+                Handles.Label(transform.position * .75f, "Pawn");
                 DrawCorrectAngle(90, 2);
                 break;
             case ChessPiece.Rook:
                 Gizmos.color = Color.gray;
                 Handles.color = Color.blue;
                 Handles.DrawWireDisc(transform.position, new Vector3(1, 1, 1), 1f);
-                Handles.Label(transform.position * .7f, "Rook");
-                DrawCorrectAngle(90, 8);
-                DrawCorrectAngle(180, 8);
+                Handles.Label(transform.position * .75f, "Rook");
+                DrawCorrectAngle(90, 7);
+                DrawCorrectAngle(180, 7);
                 break;
             case ChessPiece.Knight:
                 Gizmos.color = Color.black;
                 Handles.color = Color.blue;
                 Handles.DrawWireDisc(transform.position, new Vector3(1, 1, 1), 1f);
                 Handles.Label(transform.position * .7f, "Knight");
+                Gizmos.color = Color.green;
+
+                Vector3 start = transform.position;
+
+                Gizmos.DrawLine(start, start + new Vector3(2, 0, 0));
+                Gizmos.DrawLine(start + new Vector3(2, 0, 0), start + new Vector3(2, 1, 0));
+
+                Gizmos.DrawLine(start, start + new Vector3(2, 0, 0));
+                Gizmos.DrawLine(start + new Vector3(2, 0, 0), start + new Vector3(2, -1, 0));
+
+                Gizmos.DrawLine(start, start + new Vector3(-2, 0, 0));
+                Gizmos.DrawLine(start + new Vector3(-2, 0, 0), start + new Vector3(-2, 1, 0));
+
+                Gizmos.DrawLine(start, start + new Vector3(-2, 0, 0));
+                Gizmos.DrawLine(start + new Vector3(-2, 0, 0), start + new Vector3(-2, -1, 0));
+
+                Gizmos.DrawLine(start, start + new Vector3(0, 2, 0));
+                Gizmos.DrawLine(start + new Vector3(0, 2, 0), start + new Vector3(1, 2, 0));
+
+                Gizmos.DrawLine(start, start + new Vector3(0, 2, 0));
+                Gizmos.DrawLine(start + new Vector3(0, 2, 0), start + new Vector3(-1, 2, 0));
+
+                Gizmos.DrawLine(start, start + new Vector3(0, -2, 0));
+                Gizmos.DrawLine(start + new Vector3(0, -2, 0), start + new Vector3(1, -2, 0));
+
+                Gizmos.DrawLine(start, start + new Vector3(0, -2, 0));
+                Gizmos.DrawLine(start + new Vector3(0, -2, 0), start + new Vector3(-1, -2, 0));
                 break;
             case ChessPiece.Bishop:
                 Gizmos.color = Color.blue;
                 Handles.color = Color.blue;
                 Handles.DrawWireDisc(transform.position, new Vector3(1, 1, 1), 1f);
-                Handles.Label(transform.position * .7f, "Bishop");
-                DrawCorrectAngle(45, 2);
-                DrawCorrectAngle(135, 2);
-                DrawCorrectAngle(225, 2);
-                DrawCorrectAngle(315, 2);
+                Handles.Label(transform.position * .75f, "Bishop");
+                DrawCorrectAngle(45, 4.2f);
+                DrawCorrectAngle(135, 4.2f);
+                DrawCorrectAngle(225, 4.2f);
+                DrawCorrectAngle(315, 4.2f);
                 break;
             case ChessPiece.Queen:
                 Gizmos.color = Color.red;
                 Handles.color = Color.blue;
                 Handles.DrawWireDisc(transform.position, new Vector3(1, 1, 1), 1f);
-                Handles.Label(transform.position * .7f, "Queen");
-                DrawCorrectAngle(0, 2);
-                DrawCorrectAngle(45, 2);
-                DrawCorrectAngle(90, 2);
-                DrawCorrectAngle(135, 2);
-                DrawCorrectAngle(180, 2);
-                DrawCorrectAngle(225, 2);
-                DrawCorrectAngle(270, 2);
-                DrawCorrectAngle(315, 2);
+                Handles.Label(transform.position * 1.5f, "Queen");
+                DrawCorrectAngle(0, 4);
+                DrawCorrectAngle(45, 4);
+                DrawCorrectAngle(90, 4);
+                DrawCorrectAngle(135, 4);
+                DrawCorrectAngle(180, 4);
+                DrawCorrectAngle(225, 4);
+                DrawCorrectAngle(270, 4);
+                DrawCorrectAngle(315, 4);
                 break;
             case ChessPiece.King:
                 Gizmos.color = Color.yellow;
                 Handles.color = Color.blue;
                 Handles.DrawWireDisc(transform.position, new Vector3(1, 1, 1), 1f);
-                Handles.Label(transform.position * .7f, "King");
-                DrawCorrectAngle(0, 1);
-                DrawCorrectAngle(45, 1);
-                DrawCorrectAngle(90, 1);
-                DrawCorrectAngle(135, 1);
-                DrawCorrectAngle(180, 1);
-                DrawCorrectAngle(225, 1);
-                DrawCorrectAngle(270, 1);
-                DrawCorrectAngle(315, 1);
+                Handles.Label(transform.position * .75f, "King");
+                DrawCorrectAngle(0, 1f);
+                DrawCorrectAngle(45, 1.4f);
+                DrawCorrectAngle(90, 1f);
+                DrawCorrectAngle(135, 1.4f);
+                DrawCorrectAngle(180, 1f);
+                DrawCorrectAngle(225, 1.4f);
+                DrawCorrectAngle(270, 1f);
+                DrawCorrectAngle(315, 1.4f);
                 break;
         }
     }
